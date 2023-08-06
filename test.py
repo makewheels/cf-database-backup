@@ -93,13 +93,13 @@ def main():
     print(
         f"大小：{humanize.naturalsize(total_original_size)} -> {humanize.naturalsize(compressed_size)}，压缩比例：{compression_ratio:.2f}%")
 
-    # 上传备份文件到阿里云 OSS
-    object_key = os.path.basename(backup_archive)
-    upload_to_oss(backup_archive, object_key)
-
     # 删除原始 JSON 文件和文件夹
     shutil.rmtree(backup_file_path)
     print(f"删除原始 JSON 文件和文件夹：{backup_file_path}")
+
+    # 上传备份文件到阿里云 OSS
+    object_key = os.path.basename(backup_archive)
+    upload_to_oss(backup_archive, object_key)
 
     # 打印程序运行时间
     end_time = time.time()
