@@ -1,2 +1,2 @@
-def start():
+def start(event, context):
     print('efafawfwef')
