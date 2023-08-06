@@ -1,2 +1,2 @@
-def start(name):
+def start():
     print('efafawfwef')
